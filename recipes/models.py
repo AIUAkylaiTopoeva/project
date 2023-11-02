@@ -13,17 +13,17 @@ class Category(models.Model):
             self.slug = slugify(self.title)
         super().save()
 
-# class Recipe(models.Model):
-#     title= models.CharField(max_length=120)
-#     body = models.TextField()
-#     image = models.ImageField(upload_to='posts/', blank = True)
-#     category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='podtd')
-#     created_at = models.DateTimeField(auto_now_add=True)
-#     uploated_at= models.DateTimeField(auto_now=True)
+class Recipe(models.Model):
+    title= models.CharField(max_length=120)
+    body = models.TextField()
+    image = models.ImageField(upload_to='posts/', blank = True)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='podtd')
+    created_at = models.DateTimeField(auto_now_add=True)
+    uploated_at= models.DateTimeField(auto_now=True)
 
 
-#     def __str__(self) -> str:
-#         return f'{self.title}'
+    def __str__(self) -> str:
+        return f'{self.title}'
     
 # class Comment(models.Model):
 #     body = models.TextField()
