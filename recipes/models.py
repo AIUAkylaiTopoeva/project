@@ -17,7 +17,7 @@ class Recipe(models.Model):
     title= models.CharField(max_length=120)
     body = models.TextField()
     image = models.ImageField(upload_to='posts/', blank = True)
-    category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='podtd')
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='podtd', blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     uploated_at= models.DateTimeField(auto_now=True)
 

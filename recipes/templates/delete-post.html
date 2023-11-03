@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Delete Recipe</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <h1>Delete Recipe</h1>
+    <p>Are you sure you want to delete the recipe "{{ recipe.title }}"?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Delete Recipe</button>
+    </form>
+    <a href="{% url 'post_by_id' recipe.id %}">Cancel</a>
+</body>
+</html>

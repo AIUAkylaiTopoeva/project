@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>All Recipes</title>
+    <style>
+        .recipe-card {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin: 10px;
+            padding: 10px;
+            background-color: #f9f9f9;
+        }
+
+        .recipe-card h3 {
+            font-size: 20px;
+        }
+
+        .recipe-card p {
+            font-size: 14px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>All Recipes</h1>
+    {% for post in posts %}
+        <div class="recipe-card">
+            <h3>
+                <a href="{% url 'post_by_id' post.id %}">{{ post.title }}</a>
+                <img src="{{ recipe.image_field.url }}" alt="Изображение рецепта">
+            </h3>
+            <p>{{ post.description }}</p>
+            <!-- Add more fields here to display the recipe details -->
+        </div>
+    {% endfor %}
+</body>
+</html>
