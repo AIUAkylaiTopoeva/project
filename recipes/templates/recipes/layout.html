@@ -14,11 +14,10 @@
         <h3>Navigation</h3>
         <ul>
             <a href="{% url 'recipe' %}"><li>Main</li></a>
-            <a href="{% url 'recipe_by_id' %}"><li>Recipes</li></a>
-            <a href=""><li>Add recipe</li></a>
+            <a href="{% url 'create_recipe' %}"><li>Add recipe</li></a>
         </ul>
     </aside>
     {% block content %}
-    {% endblock %}
+    {% endblock content %}
 </body>
 </html>

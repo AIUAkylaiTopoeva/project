@@ -1,0 +1,13 @@
+{% extends 'recipes/layout.html' %}
+{% block content %}
+
+<h1>Recipe with id {{ id }}</h1>
+
+<p><b>Title:</b> {{ recipe.title }}</p>
+
+<p><b>Recipe:</b> {{ recipe.body }}</p>
+
+<p> <b>Category:</b>  {{ recipe.category.title }} </p>
+
+
+{% endblock content %}

@@ -20,19 +20,22 @@ def post_by_id(request, id):
         'id': id,
         'recipe' : Recipe.objects.get(id=id)
     }
-    return render(request,'recipe.html', context)
+    return render(request,'recipes/recipe.html', context)
 
 
 @csrf_exempt
 def create_recipe(request:HttpRequest):
     form = RecipeForm()
     if(request.method == 'POST'):
-        form = RecipeForm(data=request.POST)
-        form.save()
-        return redirect('recipe')
+        if form.is_valid():
+            form.save()
+            return redirect('recipe')  # Перенаправление после успешного создания рецепта
+        else:
+            # Вывод ошибок в консоль для отладки
+            print(form.errors)
 
     context = {'form':form,}
-    return render(request, "post-form.html", context)
+    return render(request, "recipes/post-form.html", context)
 
 @csrf_exempt
 def create_category(request:HttpRequest):
@@ -43,7 +46,7 @@ def create_category(request:HttpRequest):
         return redirect('recipe')
 
     context = {'form':form,}
-    return render(request, "post-form.html", context)
+    return render(request, "recipes/form.html", context)
 
 @csrf_exempt
 def update_recipe(request:HttpRequest, id:string):
@@ -56,7 +59,7 @@ def update_recipe(request:HttpRequest, id:string):
         return redirect('recipe')
     
     context = {'form':form,}
-    return render(request, "posts-form.html", context)
+    return render(request, "recipes/post-form.html", context)
 
 @csrf_exempt
 def delete_recipe(request, id):
@@ -65,4 +68,4 @@ def delete_recipe(request, id):
         recipe.delete()
         return redirect('recipe')
     context = {'recipe':recipe}
-    return render(request, 'delete-post.html')
+    return render(request, 'recipes/delete-post.html')
