@@ -1,13 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recipe</title>
-</head>
-<body>
+{% extends 'recipes/layout.html' %}
+{% block content %}
     <h1>Recipes</h1>
     <p>Main page</p>
-</body>
-</html>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur minus inventore hic, voluptates voluptate odio nobis, magnam dolores est obcaecati, quisquam at omnis. Veritatis distinctio aliquid molestiae explicabo sed vitae, obcaecati velit praesentium cupiditate culpa, nemo nesciunt doloribus similique omnis, vel repellat consectetur voluptatibus porro mollitia. Architecto dicta autem pariatur.</p>
+
+    {% for i in recipe %}
+    <h2>{{ i.title }}</h2>
+    <h3>{{ i.body }}</h3>
+    {% endfor %}
+
+{% endblock %}

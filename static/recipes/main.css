@@ -1,0 +1,110 @@
+body {
+    background-color: bisque;
+}
+aside {
+    background-color: #f0f0f0;
+    padding: 20px;
+    width: 200px;
+  }
+  
+
+aside.logo {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+
+li {
+    margin-bottom: 10px;
+  }
+  
+
+a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+  }
+  
+
+a:hover {
+    color: #0074d9; 
+}
+/* styles.css */
+
+.recipe-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px;
+}
+
+.recipe-card {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  padding: 10px;
+  width: calc(33.33% - 20px); /* Adjust the width as per your layout */
+  background-color: #fff;
+  transition: transform 0.2s;
+}
+
+.recipe-card:hover {
+  transform: scale(1.03);
+}
+
+.recipe-card h3 {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.recipe-card p {
+  font-size: 14px;
+  margin: 10px 0;
+}
+
+/* Additional styling for the Create and Update forms */
+form {
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/* Additional styling for the Delete confirmation */
+p.confirmation-text {
+  margin: 20px 0;
+}
+
+a.cancel-link {
+  display: inline-block;
+  margin-right: 10px;
+  padding: 5px 10px;
+  background-color: #ccc;
+  color: #333;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+a.cancel-link:hover {
+  background-color: #999;
+}

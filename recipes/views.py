@@ -11,7 +11,7 @@ def all_recipes(request:HttpRequest):
         'recipe':Recipe.objects.all()
     }
 
-    return render(request,'recipes/index.html',context=context)
+    return render(request,'recipes/index.html',{'context':context})
 
 
 def post_by_id(request, id):
@@ -20,7 +20,7 @@ def post_by_id(request, id):
         'id': id,
         'recipe' : Recipe.objects.get(id=id)
     }
-    return render(request,'recipe.html', context=context)
+    return render(request,'recipe.html', context)
 
 
 @csrf_exempt

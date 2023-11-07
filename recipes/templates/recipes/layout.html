@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'recipes/main.css' %}">
+</head>
+<body>
+    <aside>
+        <span class="logo">Project</span>
+        <h3>Navigation</h3>
+        <ul>
+            <a href="{% url 'recipe' %}"><li>Main</li></a>
+            <a href="{% url 'recipe_by_id' %}"><li>Recipes</li></a>
+            <a href=""><li>Add recipe</li></a>
+        </ul>
+    </aside>
+    {% block content %}
+    {% endblock %}
+</body>
+</html>
